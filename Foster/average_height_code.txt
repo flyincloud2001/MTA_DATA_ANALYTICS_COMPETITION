@@ -1,0 +1,45 @@
+#Find average height for top four teams
+
+import worldcup as wc
+
+
+countries_list = [
+    "Brazil",
+    "Argentina",
+    "France",
+    "Spain"
+]
+
+average_height_list = []
+
+year = 2010
+
+while year <= 2018:
+    
+    for country in countries_list:
+        
+        
+        players = wc.squad(country, year)
+        
+        total_height = 0
+        player_number = 0
+        
+        for player in players:
+            player_data_dic = wc.player(player["player_id"])[0]
+            height = int(player_data_dic["height"][0:3])
+            total_height += height
+            player_number += 1
+        
+        average_height = total_height / player_number   
+        
+        country_dic = {
+            "year" : year,
+            "country" : country,
+            "average_height" : average_height
+        }
+        
+        average_height_list.append(country_dic)
+  
+    year += 4
+    
+wc.datatocsv(average_height_list, "average_height.csv")

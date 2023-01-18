@@ -1,0 +1,39 @@
+
+import worldcup as wc
+
+
+countries_list = [
+    "Brazil",
+    "Spain",
+    "Argentina",
+    "France"
+]
+
+
+year = 2010
+
+file_list = []
+
+while year <= 2018:
+
+  for country in countries_list:
+
+    goals_sum = 0
+    
+    for player in wc.teamgoals(country, year):
+      goals_sum += player["goals"]
+
+    total_goals = goals_sum
+    
+    dic = {
+    "year" : year,
+    "country" : country,
+    "total goal" : total_goals
+      
+    }
+    
+    file_list.append(dic)
+
+  year += 4
+
+wc.datatocsv(file_list, "top_teams_goals_for_question_3.csv")

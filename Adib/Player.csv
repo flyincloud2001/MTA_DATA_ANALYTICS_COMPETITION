@@ -1,0 +1,2 @@
+player_id,team_id,country_id,position_id,common_name,display_name,fullname,firstname,lastname,nationality,birthdate,birthcountry,birthplace,height,weight,image_path,position
+95807,14,17,2,R. Varane,Raphaël Varane,Raphaël Varane,Raphaël,Varane,France,25/04/1993,France,Lille,191 cm,81 kg,https://cdn.sportmonks.com/images/soccer/players/31/95807.png,"{'data': {'id': 2, 'name': 'Defender'}}"
